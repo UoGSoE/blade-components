@@ -19,8 +19,11 @@ If you are using full-page Livewire components then there is a default `resource
 <!-- info message using alpine to add a dismiss/close button at the right -->
 <x-message.info class="mb-4" x-data="{ show: true }" x-show="show" x-transition.opacity="">
     <p>Info</p>
+    <span class="sr-only">Close</span>
     <button class="hover:text-gray-200" x-on:click="show = false">
-        <x-icon.close />
+        <span aria-hidden="true">
+            <x-icon.close />
+        </span>
     </button>
 </x-message.info>
 ```
