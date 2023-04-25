@@ -28,11 +28,18 @@
                 Platforms
             </a>
             <a
+                x-data="{ active: {{ request()->routeIs('type.index') ? 'true' : 'false' }} }"
+                href="{{ route('type.index') }}"
+                class=" hover:bg-uogblue-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                :class="{ 'bg-uogblue-900 text-white' : active, 'text-uogblue-100' : !(active) }">
+                License Types
+            </a>
+            <a
                 x-data="{ active: {{ request()->routeIs('endUser.index') ? 'true' : 'false' }} }"
                 href="{{ route('endUser.index') }}"
                 class="hover:bg-uogblue-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
                 :class="{ 'bg-uogblue-900 text-white' : active, 'text-uogblue-100' : !(active) }">
-                End Users
+                End Users (Available To)
             </a>
             <a
                 x-data="{ active: {{ request()->routeIs('availability.index') ? 'true' : 'false' }} }"
