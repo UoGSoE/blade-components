@@ -48,6 +48,25 @@ If you are using full-page Livewire components then there is a default `resource
 ```
 
 ```html
+<x-input.textarea id="textarea" name="my_textarea" label="Enter some text" help="Not too much though">{{ $originalValue }}</x-input.textarea>
+
+<x-input.select id="select" name="my_select" label="Pick something" help="From the select">
+    <option value="1">This</option>
+    <option value="2">That</option>
+</x-input.select>
+
+<x-input.radio id="radio1" name="radio_button" value="1" label="First" />
+<x-input.radio id="radio2" name="radio_button" value="2" label="Second" />
+<x-input.radio id="radio3" name="radio_button" value="3" label="Third" />
+
+<div class="flex flex-wrap gap-4 mt-2">
+    <x-input.radio id="radio4" name="radio_group_button" value="1" label="First" />
+    <x-input.radio id="radio5" name="radio_group_button" value="2" label="Second" />
+    <x-input.radio id="radio6" name="radio_group_button" value="3" label="Third" />
+</div>
+```
+
+```html
 <!-- standard table -->
 <x-table>
     <x-table.header>
