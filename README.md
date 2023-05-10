@@ -29,6 +29,21 @@ If you are using full-page Livewire components then there is a default `resource
 ```
 
 ```html
+<!-- Basic 'media card' -->
+<x-layout.media-card>
+    <x-slot:media>
+        <svg class="h-16 w-16 border border-gray-300 bg-white text-gray-300" preserveAspectRatio="none" stroke="currentColor" fill="none" viewBox="0 0 200 200" aria-hidden="true">
+          <path vector-effect="non-scaling-stroke" stroke-width="1" d="M0 0l200 200M0 200L200 0" />
+        </svg>
+    </x-slot:media>
+    <x-slot:heading>
+        My Heading
+    </x-slot:heading>
+    Main body of the media card, blah de blah
+</x-layout.media-card>
+```
+
+```html
 <!-- simple level with some items grouped at the left and the right -->
 <x-layout.level>
     <x-layout.level-section> <!-- left side of the level -->
@@ -64,6 +79,26 @@ If you are using full-page Livewire components then there is a default `resource
     <x-input.radio id="radio5" name="radio_group_button" value="2" label="Second" />
     <x-input.radio id="radio6" name="radio_group_button" value="3" label="Third" />
 </div>
+```
+
+```html
+<!-- a vertical timeline -->
+<x-layout.timeline class="w-1/2">
+    <x-layout.timeline-item timestamp="13:15" icon-bg="bg-sky-500">
+        <x-slot:icon>
+            <span class="text-white">
+                <x-icon.circle-tick />
+            </span>
+        </x-slot:icon>
+        With an icon
+    </x-layout.timeline-item>
+    <x-layout.timeline-item timestamp="Monday, 14:20">
+        Without an icon, just have a plain circle placeholder instead
+    </x-layout.timeline-item>
+    <x-layout.timeline-item timestamp="Tuesday, 09:35" last="true">
+        Last item, so pass "last" in.  Stops a trailing 'timeline' line dangling.
+    </x-layout.timeline-item>
+</x-layout.timeline>
 ```
 
 ```html
